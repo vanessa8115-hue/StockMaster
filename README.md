@@ -4,15 +4,15 @@ Sistema de controle de estoque em Python com interface gráfica.
 
 ## Descrição
 
-StockMaster é um aplicativo para gerenciamento de produtos, entradas, saídas e relatórios. Ele foi desenvolvido com `CustomTkinter` para interface moderna e usa um banco de dados local para armazenar informações de estoque.
+StockMaster é um aplicativo para gerenciamento de produtos, entradas, saídas e relatórios. Ele foi desenvolvido com `CustomTkinter` para interface moderna e utiliza um banco de dados local para armazenar e consultar informações de estoque.
 
 ## Funcionalidades
 
 - Cadastro, edição e exclusão de produtos
-- Busca de produtos por código, nome ou categoria
+- Busca por código, nome ou categoria
 - Controle de quantidades no estoque e níveis de estoque mínimo
 - Registro de entradas e saídas de produtos
-- Visualização de relatórios de estoque
+- Visualização de relatórios de movimentos e estoque
 - Interface gráfica com navegação entre telas
 
 ## Tecnologias
@@ -20,18 +20,47 @@ StockMaster é um aplicativo para gerenciamento de produtos, entradas, saídas e
 - Python 3
 - CustomTkinter
 - Tkinter
-- SQLite (ou outro banco local, conforme implementado em `banco.py`)
+- SQLite
 
-## Como usar
+## Requisitos
 
-1. Instale o Python 3
-2. Instale as dependências:
+- Python 3.8 ou superior
+- `pip`
+
+## Instalação
+
+1. Clone o repositório ou copie o projeto para sua máquina.
 
 ```bash
-pip install customtkinter
+git clone https://github.com/vanessa8115-hue/StockMaster.git
+cd StockMaster
 ```
 
-3. Execute o aplicativo:
+2. Crie e ative um ambiente virtual (recomendado):
+
+Windows:
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+macOS/Linux:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+3. Instale as dependências:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Uso
+
+Para iniciar o aplicativo, execute:
 
 ```bash
 python main.py
@@ -40,14 +69,16 @@ python main.py
 ## Estrutura do projeto
 
 - `main.py` - ponto de entrada do aplicativo
-- `banco.py` - lógica de banco de dados
-- `telas/` - telas da interface gráfica
-- `config.py` - configurações gerais do projeto
+- `banco.py` - lógica de banco de dados e CRUD
+- `config.py` - configurações do aplicativo
+- `exportadores.py` - funções para exportação de dados
+- `telas/` - telas da interface gráfica do sistema
+
+## Observações
+
+- Use um ambiente virtual para manter as dependências isoladas.
+- O banco de dados local é criado automaticamente ao iniciar o aplicativo.
 
 ## Contato
 
 - GitHub: https://github.com/vanessa8115-hue/StockMaster
-
-## Observações
-
-Se você usar um ambiente virtual, recomenda-se ativá-lo antes de instalar dependências.
